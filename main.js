@@ -1,66 +1,62 @@
 var password = '';
 var length = document.getElementById("length").value;
-let includeLowercase = document.getElementById("includeLowercase").checked;
-let includeUppercase = document.getElementById("includeUppercase").checked;
-let includeNumbers = document.getElementById("includeNumbers").checked;
-let includeSymbols = document.getElementById("includeSymbols").checked;
+let includeLowercase = document.getElementById("includeLowercase");
+let includeUppercase = document.getElementById("includeUppercase");
+let includeNumbers = document.getElementById("includeNumbers");
+let includeSymbols = document.getElementById("includeSymbols");
 
-
-document.getElementById("passwordForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    length = document.getElementById("length").value;
-    includeLowercase = document.getElementById("includeLowercase").checked;
-    includeUppercase = document.getElementById("includeUppercase").checked;
-    includeNumbers = document.getElementById("includeNumbers").checked;
-    includeSymbols = document.getElementById("includeSymbols").checked;
-
+document.querySelector('.butao').addEventListener('click', function () {
+    var passworde = document.getElementById("password");
     password = generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
-    document.getElementById("password").textContent = password;
-});
-
-document.querySelector('.butao').addEventListener('click', function() {
-    let password = generatePassword(includeLowercase, includeUppercase, includeNumbers, includeSymbols);
-    document.getElementById("password").textContent = password;
+    passworde.textContent = password;
+    passworde.style.padding = "10px 10px 10px 10px";
+    const historico = document.getElementById('historico');
+    historico.scrollTop = historico.scrollHeight;
 });
 
 function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
     let charSet = "";
     length = document.getElementById("length").value;
 
-    if (includeLowercase) {
+    if (includeLowercase.checked) {
         charSet += "abcdefghijklmnopqrstuvwxyz";
     }
-    if (includeUppercase) {
+    if (includeUppercase.checked) {
         charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
-    if (includeNumbers) {
+    if (includeNumbers.checked) {
         charSet += "0123456789";
     }
-    if (includeSymbols) {
+    if (includeSymbols.checked) {
         charSet += "!@#$%^&*()_+-=[]{}|;':\"<>,.?/\\";
     }
-    
 
-    let newPassword = "";
-    for (let i = 0; i < length; i++) {
-        newPassword += charSet.charAt(Math.floor(Math.random() * charSet.length));
+    if (charSet === "") {
+        return "Error";
+    } else {
+
+
+        console.log(includeLowercase.checked, includeUppercase.checked, includeNumbers.checked, includeSymbols.checked);
+
+        let newPassword = "";
+        for (let i = 0; i < length; i++) {
+            newPassword += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }
+
+        const element = document.getElementById("historico");
+        element.insertAdjacentHTML('beforeend', `<p><br> <b> &nbsp; ${newPassword} </b> <br> <p style="font-weight: 100" > &nbsp; &nbsp; ${new Date().toLocaleString()} </p> </p>`);
+
+
+
+        return newPassword;
     }
-
-    const element = document.getElementById("historico");
-    element.insertAdjacentHTML('beforeend', `<p><br> <b> &nbsp; ${newPassword} </b> <br> <p style="font-weight: 100" > &nbsp; &nbsp; ${new Date().toLocaleString()} </p> </p>`);
-
-    var element2 = document.getElementById("password");
-    element2.style.padding = "10px 45px 10px 10px"
-
-    return newPassword;
 }
 
 const lengthSlider = document.getElementById("length");
 const output = document.getElementById("slider-value");
 output.innerHTML = lengthSlider.value;
 
-lengthSlider.oninput = function() {
+lengthSlider.oninput = function () {
     output.innerHTML = this.value;
 }
 
@@ -70,10 +66,12 @@ function limparHistorico() {
     document.getElementById("password").style.padding = "0";
 }
 
-document.querySelector('.butao').addEventListener('mousedown', function() {
+document.querySelector('.butao').addEventListener('mousedown', function () {
     this.classList.add('clicked');
     setTimeout(() => {
         this.classList.remove('clicked');
     }, 300);
 });
+
+
 ``

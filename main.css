@@ -2,6 +2,7 @@
   padding: 0;
   margin: 50px;
   box-sizing: border-box;
+  user-select: none
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;600;700&display=swap');
@@ -25,7 +26,7 @@ body {
 form {
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   margin-top: 3rem;
   gap: 30px;
 }
@@ -78,7 +79,7 @@ h3 {
     gap: 30px;
   }
 
-  .paiSpan{
+  .paiSpan {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -88,7 +89,7 @@ h3 {
 
   }
 
-  
+
 
   #length {
     -webkit-appearance: none;
@@ -104,17 +105,17 @@ h3 {
   .butao {
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
- }
+  }
 
- .butao.clicked {
-  opacity: 0.5;
-}
+  .butao.clicked {
+    opacity: 0.5;
+  }
 
-.butao:hover{
-  transform: scale(1.03);
-}
- 
-  
+  .butao:hover {
+    transform: scale(1.03);
+  }
+
+
   #length::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -123,7 +124,7 @@ h3 {
     background: yellow;
     border: 1px solid black;
   }
-  
+
   #length::-moz-range-thumb {
     width: 20px;
     height: 20px;
@@ -148,9 +149,9 @@ h3 {
     appearance: none;
     background-color: #bbb;
     transition: all .3s;
-   }
-   
-   .check::before {
+  }
+
+  .check::before {
     content: '';
     position: absolute;
     border: solid #000000;
@@ -165,34 +166,34 @@ h3 {
     transform: rotate(0deg);
     transition: all .3s;
     transform-origin: center center;
-   }
-   
-   .check:checked {
+  }
+
+  .check:checked {
     animation: a .3s ease-in forwards;
     background-color: #F8EF00;
-   }
-   
-   .check:checked::before {
+  }
+
+  .check:checked::before {
     opacity: 1;
     transform: rotate(405deg);
-   }
-   
-   @keyframes a {
+  }
+
+  @keyframes a {
     0% {
-     opacity: 1;
-     transform: scale(1) rotateY(0deg);
+      opacity: 1;
+      transform: scale(1) rotateY(0deg);
     }
-   
+
     50% {
-     opacity: 0;
-     transform: scale(.8) rotateY(180deg);
+      opacity: 0;
+      transform: scale(.8) rotateY(180deg);
     }
-   
+
     100% {
-     opacity: 1;
-     transform: scale(1) rotateY(360deg);
+      opacity: 1;
+      transform: scale(1) rotateY(360deg);
     }
-   }
+  }
 
   @keyframes a {
     0% {
@@ -217,39 +218,18 @@ h3 {
     border: 2px solid #00F0FF;
   }
 
-  button {
-    background: #FBCA1F;
-    font-family: inherit;
-    padding: 0.6em 1.3em;
-    font-weight: 900;
-    font-size: 18px;
-    border: 3px solid #00F0FF;
-    border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em;
-   }
-   
-   button:hover {
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em;
-   }
-   
-   button:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.05em 0.05em;
-   }
-
-   .pai-hist{
+  .pai-hist {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 15px;
-   }
+  }
 
-   .pai-hist span {
+  .pai-hist span {
     margin-top: 10px;
     color: #F8EF00;
     cursor: pointer;
-   }
+  }
 
   #historico {
     width: 50vw;
@@ -294,7 +274,7 @@ h3 {
     gap: 30px;
   }
 
-  .paiSpan{
+  .paiSpan {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -316,17 +296,17 @@ h3 {
   .butao {
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
- }
+  }
 
- .butao.clicked {
-  opacity: 0.5;
-}
+  .butao.clicked {
+    opacity: 0.5;
+  }
 
-.butao:hover{
-  transform: scale(1.03);
-}
- 
-  
+  .butao:hover {
+    transform: scale(1.03);
+  }
+
+
   #length::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -335,7 +315,7 @@ h3 {
     background: yellow;
     border: 1px solid black;
   }
-  
+
   #length::-moz-range-thumb {
     width: 20px;
     height: 20px;
@@ -360,9 +340,9 @@ h3 {
     appearance: none;
     background-color: #bbb;
     transition: all .3s;
-   }
-   
-   .check::before {
+  }
+
+  .check::before {
     content: '';
     position: absolute;
     border: solid #000000;
@@ -377,34 +357,34 @@ h3 {
     transform: rotate(0deg);
     transition: all .3s;
     transform-origin: center center;
-   }
-   
-   .check:checked {
+  }
+
+  .check:checked {
     animation: a .3s ease-in forwards;
     background-color: #F8EF00;
-   }
-   
-   .check:checked::before {
+  }
+
+  .check:checked::before {
     opacity: 1;
     transform: rotate(405deg);
-   }
-   
-   @keyframes a {
+  }
+
+  @keyframes a {
     0% {
-     opacity: 1;
-     transform: scale(1) rotateY(0deg);
+      opacity: 1;
+      transform: scale(1) rotateY(0deg);
     }
-   
+
     50% {
-     opacity: 0;
-     transform: scale(.8) rotateY(180deg);
+      opacity: 0;
+      transform: scale(.8) rotateY(180deg);
     }
-   
+
     100% {
-     opacity: 1;
-     transform: scale(1) rotateY(360deg);
+      opacity: 1;
+      transform: scale(1) rotateY(360deg);
     }
-   }
+  }
 
   @keyframes a {
     0% {
@@ -438,37 +418,59 @@ h3 {
     border: 3px solid #00F0FF;
     border-radius: 0.4em;
     box-shadow: 0.1em 0.1em;
-   }
-   
-   button:hover {
+  }
+
+  button:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em;
-   }
-   
-   button:active {
+  }
+
+  button:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
-   }
+  }
 
-   .pai-hist{
+  .pai-hist {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 15px;
-   }
+  }
 
-   .pai-hist span {
+  .pai-hist span {
     margin-top: 10px;
     color: #F8EF00;
     cursor: pointer;
-   }
+  }
 
   #historico {
     width: 25vw;
     height: 15rem;
     border: 2px solid #00F0FF;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 0 auto;
   }
+
+  #historico::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #historico::-webkit-scrollbar-track {
+    background-color: #2d2d2d;
+    cursor: pointer;
+  }
+  
+  #historico::-webkit-scrollbar-thumb {
+    background-color: #F8EF00;
+    border-radius: 10px;
+    cursor: pointer;
+
+  
+  #historico::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    cursor: pointer;
+
+  }
+  
 
 }

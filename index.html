@@ -11,7 +11,6 @@
 
 <body>
 
-    <div>
 
         <div class="paiSpan">
             <span style="color: #f8ef00; font-weight: bold; ">PASSWORD </span>
@@ -26,28 +25,26 @@
             <span id="slider-value">6</span>
 
             <div>
-                <input checked  class="check" type="checkbox" id="incluiMinuscula" name="incluiMinuscula">
-                <label for="incluiMinuscula">Lowercase</label> &nbsp;&nbsp;
-                <input checked class="check" type="checkbox" id="incluiMaiuscula" name="incluiMaiuscula">
-                <label for="incluiMaiuscula">Uppercase</label>
+                <input checked  class="check" type="checkbox" id="includeLowercase" name="includeLowercase">
+                <label for="includeLowercase">Lowercase</label> &nbsp;&nbsp;
+                <input checked class="check" type="checkbox" id="includeUppercase" name="includeUppercase">
+                <label for="includeUppercase">Uppercase</label>
             </div>
             <div>
-                <input checked class="check" type="checkbox" id="incluiNumeros" name="incluiNumeros">
-                <label for="incluiNumeros">Numbers</label> &nbsp;&nbsp;
-                <input checked class="check" type="checkbox" id="incluiSimbolos" name="incluiSimbolos">
-                <label for="incluiSimbolos">Symbols</label>
+                <input checked class="check" type="checkbox" id="includeNumbers" name="includeNumbers">
+                <label for="includeNumbers">Numbers</label> &nbsp;&nbsp;
+                <input checked class="check" type="checkbox" id="includeSymbols" name="includeSymbols">
+                <label for="includeSymbols">Symbols</label>
             </div>
-            <button type="submit">Gerar Senha</button>
+            <img id="submit" class="butao" src="assets/svg/Button2.png" alt="">
         </form>
         <div>
 
-        </div>
         <div class="pai-hist">
-            <p id="historico">  </p>
+            <p id="historico"></p>
             <p id="data-hora"></p>
             <span onclick="limparHistorico()" id="hist-limpo" > Limpe o Historico </span>
         </div>
-    </div>
 
 
 

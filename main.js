@@ -1,9 +1,17 @@
+const element = document.getElementById("historico");
 var password = '';
-var length = document.getElementById("length").value;
+var length = document.getElementById("length");
 let includeLowercase = document.getElementById("includeLowercase");
 let includeUppercase = document.getElementById("includeUppercase");
 let includeNumbers = document.getElementById("includeNumbers");
 let includeSymbols = document.getElementById("includeSymbols");
+let objCookies = Cookies();
+let contadorCookies = 0
+
+    includeLowercase.addEventListener('change', function{
+        
+    });
+
 
 document.querySelector('.butao').addEventListener('click', function () {
     var passworde = document.getElementById("password");
@@ -14,7 +22,10 @@ document.querySelector('.butao').addEventListener('click', function () {
     historico.scrollTop = historico.scrollHeight;
 });
 
+
+
 function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
+    let data = new Date().toLocaleString();
     let charSet = "";
     length = document.getElementById("length").value;
 
@@ -43,21 +54,37 @@ function generatePassword(length, includeLowercase, includeUppercase, includeNum
             newPassword += charSet.charAt(Math.floor(Math.random() * charSet.length));
         }
 
-        const element = document.getElementById("historico");
-        element.insertAdjacentHTML('beforeend', `<p><br> <b> &nbsp; ${newPassword} </b> <br> <p style="font-weight: 100" > &nbsp; &nbsp; ${new Date().toLocaleString()} </p> </p>`);
+        element.insertAdjacentHTML('beforeend', `<p><br> <b> &nbsp; ${newPassword} </b> <br> <p style="font-weight: 100" > &nbsp; &nbsp; ${data} </p> </p>`);
 
 
+
+        objCookies.setCookie('senha', newPassword , 12);
+        objCookies.setCookie('data', data, 12);
+
+        
 
         return newPassword;
     }
 }
 
-const lengthSlider = document.getElementById("length");
-const output = document.getElementById("slider-value");
-output.innerHTML = lengthSlider.value;
+function readingCookies(){
+    element.insertAdjacentHTML('beforeend', `<p><br> <b> &nbsp; ${objCookies.senha} </b> <br> <p style="font-weight: 100" > &nbsp; &nbsp; ${objCookies.data} </p> </p>`);
+    console.log(Object.keys(objCookies));
 
-lengthSlider.oninput = function () {
+    output.innerHTML =  objCookies.valueSlider;
+    length.value = objCookies.valueSlider;
+   
+}
+
+
+const output = document.getElementById("slider-value");
+output.innerHTML = length.value;
+
+length.oninput = function () {
     output.innerHTML = this.value;
+
+    objCookies.setCookie('valueSlider', this.value, 12);
+
 }
 
 function limparHistorico() {
@@ -73,5 +100,3 @@ document.querySelector('.butao').addEventListener('mousedown', function () {
     }, 300);
 });
 
-
-``

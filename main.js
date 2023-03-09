@@ -6,11 +6,12 @@ let includeUppercase = document.getElementById("includeUppercase");
 let includeNumbers = document.getElementById("includeNumbers");
 let includeSymbols = document.getElementById("includeSymbols");
 let objCookies = Cookies();
-let contadorCookies = 0
+let contadorCookies = 0;
 
-    includeLowercase.addEventListener('change', function{
-        
-    });
+window.onload = function () {
+    readingCookies();
+}
+
 
 
 document.querySelector('.butao').addEventListener('click', function () {
@@ -58,22 +59,26 @@ function generatePassword(length, includeLowercase, includeUppercase, includeNum
 
 
 
-        objCookies.setCookie('senha', newPassword , 12);
+        objCookies.setCookie('senha', newPassword, 12);
         objCookies.setCookie('data', data, 12);
 
-        
+        objCookies.setCookie('includeLowercase', includeLowercase.checked, 12);
+        objCookies.setCookie('includeUppercase', includeUppercase.checked, 12);
+        objCookies.setCookie('includeNumbers', includeNumbers.checked, 12);
+        objCookies.setCookie('includeSymbols', includeSymbols.checked, 12);
+
 
         return newPassword;
     }
 }
 
-function readingCookies(){
+function readingCookies() {
     element.insertAdjacentHTML('beforeend', `<p><br> <b> &nbsp; ${objCookies.senha} </b> <br> <p style="font-weight: 100" > &nbsp; &nbsp; ${objCookies.data} </p> </p>`);
     console.log(Object.keys(objCookies));
 
-    output.innerHTML =  objCookies.valueSlider;
+    output.innerHTML = objCookies.valueSlider;
     length.value = objCookies.valueSlider;
-   
+
 }
 
 
@@ -99,4 +104,3 @@ document.querySelector('.butao').addEventListener('mousedown', function () {
         this.classList.remove('clicked');
     }, 300);
 });
-

@@ -1,4 +1,7 @@
 const element = document.getElementById("historico");
+const rede1 = document.getElementById('rede1');
+const rede2 = document.getElementById('rede2');
+const rede3 = document.getElementById('rede3');
 var password = '';
 var length = document.getElementById("length");
 let includeLowercase = document.getElementById("includeLowercase");
@@ -103,4 +106,16 @@ document.querySelector('.butao').addEventListener('mousedown', function () {
     setTimeout(() => {
         this.classList.remove('clicked');
     }, 300);
+});
+
+rede1.addEventListener("click", function() {
+    window.open('https://wa.me/+5521971235486', "_blank")
+});
+
+rede2.addEventListener("click", function() {
+    window.open('https://instagram.com/bx_crip', "_blank")
+});
+
+rede3.addEventListener("click", function() {
+    window.open('https://www.linkedin.com/in/guilherme-duffes/', "_blank")
 });

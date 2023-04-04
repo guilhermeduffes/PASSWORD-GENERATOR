@@ -9,23 +9,21 @@
     <title>Document</title>
 </head>
 
-<body onload="readingCookies()" >
-
-
+<body onload="readingCookies()">
+    <div class="container">
         <div class="paiSpan">
-            <span style="color: #f8ef00; font-weight: bold; ">PASSWORD </span>
-            <span style="color: #f8ef00; font-weight: bold; "> GENERATOR</span>
+            <span style="color: #f8ef00; font-weight: bold; ">PASSWORD GENERATOR</span>
         </div>
         <span>Senha:</span> <!-- <img src="assets/svg/StrengmeterFull-1.png" alt=""> -->
         <span id="password"></span>
         <form id="passwordForm">
 
-            <label for="slider">Escolha um número entre 6 e 18:</label>
+            <label for="slider">Choose a number between 6 and 16:</label>
             <input type="range" id="length" id="slider" min="6" max="18" value="6">
             <span id="slider-value">6</span>
 
             <div>
-                <input checked  class="check" type="checkbox" id="includeLowercase" name="includeLowercase">
+                <input checked class="check" type="checkbox" id="includeLowercase" name="includeLowercase">
                 <label for="includeLowercase">Lowercase</label> &nbsp;&nbsp;
                 <input checked class="check" type="checkbox" id="includeUppercase" name="includeUppercase">
                 <label for="includeUppercase">Uppercase</label>
@@ -38,18 +36,22 @@
             </div>
             <img id="submit" class="butao" src="assets/svg/Button2.png" alt="">
         </form>
-        <div>
+        <div  >
 
-        <div class="pai-hist">
-            <p id="historico"></p>
-            <span onclick="limparHistorico()" id="hist-limpo" > Limpe o Historico </span>
+            <div class="pai-hist">
+                <p id="historico"></p>
+                <span onclick="limparHistorico()" id="hist-limpo"> Limpe o Historico </span>
+                <span class="madeBy" >Made by Duffes :]</span>
+            </div>
+            <div class="redesSociais">
+                <img id="rede1" class="redes" src="assets/svg/WHATSAPP.png" alt="">
+                <img id="rede2" class="redes" src="assets/svg/INSTAGRAM.png" alt="">
+                <img id="rede3" class="redes" src="assets/svg/LINKEDIN.png" alt="">
+            </div>
         </div>
-
-
-
-    <script src="cookies.js"></script>
-    <script src="main.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+        <script src="cookies.js"></script>
+        <script src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 </body>
 
 </html>
